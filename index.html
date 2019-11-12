@@ -54,7 +54,7 @@
     }
 
     .cursor {
-     position: absolute;
+     position: relative;
      width: 200px;
      height: 200px;
      left: -100px;
@@ -349,8 +349,8 @@
 
  canvas.addEventListener("mousemove",function(e){
  	  var pos = getPosition(this);
-     var x = e.pageX - pos.x;
-     var y = e.pageY - pos.y;
+     var x = e.clientX + pos.x;
+     var y = e.clientY + pos.y;
      var coord = "x=" + x + ", y=" + y;
      var c = this.getContext('2d');
      var p = c.getImageData(x, y, 1, 1).data;
@@ -363,6 +363,7 @@
      var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
 
      console.log(hex);
+     console.log(x, y);
 
      stone1 = ['#f6ff00', '#ffa800', '#f7ff00', '#ee7900', '#f6ff43', '#f3ff27', '#f3ff1e', '#f4ff0c', '#ffc400', '#fee200', '#ffcd00', '#ffaf00', '#fcd026', '#f8ff00', '#f3ff25', '#ffde00', '#f3ff47', '#ffbf00', '#ffbe00', '#ffbd00', '#fee508', '#ffe000', '#f9fb00', '#fcee00', '#ffdf00', '#f2ff00', '#f3ff33', '#ffc200', '#f5ff03', '#ffc100', '#f7ff15', '#f7ff09', '#f2ff0f', '#f9fb2c', '#fee100', '#f8fe05', '#f3ff00', '#f8fe36', '#ffb700', '#ffab00', '#ffb000', '#f4ff56', '#ffc900', '#f9f90f', '#ffca19', '#ffcf00', '#f8fd00', '#faf601', '#f2ff13', '#fbf000', '#f9f800', '#f4ff4c', '#f8ff31', '#f7ff18', '#faf500', '#faf61b', '#f3ff4a', '#ffc300', '#f8fe18', '#ffc600', '#f5ff00', '#f4ff10', '#fee529', '#f3ff37', '#fcec00', '#ffac00', '#ffd900', '#f5ff08', '#ffdf11', '#f3ff02', '#ffdb00', '#f5ff0c', '#ff8900', '#f5ff39', '#f37a00', '#ffcb00', '#f9f900', '#f4ff00'];
 
@@ -380,8 +381,8 @@
      if(stone1.includes(hex)){
        console.log("stone1");
        $("#twit").show().css({
-         "left": e.clientX-50,
-         "top": e.clientY-50,
+         "left": e.clientX,
+         "top": e.clientY,
          "display": "block",
        });
      }
