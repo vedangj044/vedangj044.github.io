@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Music WALL</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .flex-container > iframe {
+      border-bottom: 1px solid lightgrey;
+      border-top: 1px solid lightgrey;
+    }
+    body{
+      margin-bottom:0px;
+    }
+    </style>
+
+  </head>
+
+
+  <body>
+
+    <main>
+    <div class="parallax-container">
+      <div class="parallax">
+        <img src="prateek.jpg">
+      </div>
+    </div>
+    <br>
+    <div class="container">
+    <h1>My Music Wall</h1>
+    </div>
+    <div class="flex-container container row" id="initial0">
+    </div>
+    <div class="parallax-container">
+      <div class="parallax">
+        <img src="ar.jpg">
+      </div>
+    </div>
+    <br>
+    <div class="flex-container container row" id="initial1">
+    </div>
+    <div class="parallax-container">
+      <div class="parallax">
+        <img src="ritviz.jpg">
+      </div>
+    </div>
+    <br>
+    <div class="flex-container container row" id="initial2">
+    </div>
+  </main>
+    <div class="footer-copyright" style="margin-bottom:0px;">
+      <div class="container">
+        <h5 >Made by <a heaf="#"> Vedang</a> with <i class="material-icons ">favorite</i></h5>
+      </div>
+    </div>
+  </body>
+
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script>
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+fetch('https://spreadsheets.google.com/feeds/cells/1vaaOJdpJRtzaQMWjOiDze3ib5WRrKBzPrhH3DcYTTec/1/public/full?alt=json')
+  .then(response => {
+    return response.json()
+  })
+  .then(data => {
+
+    let init = document.getElementById("initial");
+    let x = 0;
+    let arr = data.feed.entry;
+    for(const yv of shuffle(arr)){
+      var str = JSON.stringify(yv.content);
+      var str1 = str.substring(38,49);
+      console.log(str1);
+      yt = document.createElement("iframe");
+      yt.setAttribute("class", "col s12 m6 l4");
+      yt.setAttribute("src", "https://www.youtube.com/embed/"+str1+"?controls=0")
+      yt.setAttribute("width", "500px");
+      yt.setAttribute("height", "400px");
+
+      yt.setAttribute("frameborder", "0");
+
+
+      document.getElementById("initial"+String(parseInt(x/6))).appendChild(yt);
+      if(x<14){
+        x+=1;
+      }
+
+    }
+  })
+  .catch(err => {
+    // Do something for an error here
+  })
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.parallax');
+  var instances = M.Parallax.init(elems, {});
+});
+</script>
+
+</html>

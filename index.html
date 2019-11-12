@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <script
+    src="https://code.jquery.com/jquery-2.2.4.js"
+    integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"></script>
+    <link href="Turntable/css/turntable.css" rel="stylesheet">
+    <script type="text/javascript" src="jQuery-rwdImageMaps/jquery.rwdImageMaps.min.js"></script>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <style>
+    body, html{
+      height: 100%;
+      margin: 0;
+    }
+    #hand{
+      height: 900px;
+      width: 500px;
+    }
+    #cla{
+      height: 100%;
+      background-image: url('back.JPG');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    #nameW{
+      position: absolute;
+      left: 30%;
+      top: 40%;
+      color: white;
+    }
+    nav{
+      position: fixed;
+      top: 0%;
+      opacity: 0;
+    }
+    #color-fill .hex {
+      fill: #ADD8E6 ;
+    }
+    #turntableCon{
+      visibility: hidden;
+      height: 10px;
+    }
+    #testarea {
+     width: 100%;
+     height: 1000px;
+     cursor: none;
+    }
+
+    .cursor {
+     position: absolute;
+     width: 200px;
+     height: 200px;
+     left: -100px;
+     opacity: 0.85;
+     border-radius: 20px;
+    }
+    #git{
+      display: none;
+    }
+    #twit{
+      display: none;
+    }
+    #quora{
+      display: none;
+    }
+    #linked{
+      display: none;
+    }
+    #insta{
+      display: none;
+    }
+
+    .cursor1{
+      position: absolute;
+      width: 275px;
+      height: 275px;
+      left: -100px;
+      opacity: 0.85;
+      border-radius: 20px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="cla">
+  </div>
+
+
+  <div data-aos="fade-up">
+     <div class="container" id="nameW">
+         <h1 id="name">Vedang Joshi</h1>
+         <h6> Microsoft Student Partner 2019-20 </h6>
+         <h6> B.E Computer Science 2018-22</h6>
+     </div>
+  </div>
+  <nav id="navbar" style="">
+    <div class="nav-wrapper blue">
+      <a href="#cla" class="brand-logo center">Vedang Joshi</a>
+      <ul class="left hide-on-med-and-down">
+        <li><a href="index14.html">Contact ME</a></li>
+        <li><a href="index13.html">Projects</a></li>
+        <li class="active"><a href="collapsible.html">About me</a></li>
+        <li><a href="index9.html">Music WALL</a></li>
+      </ul>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="https://docs.google.com/document/d/1UCC7BNZa0VaTdj1n_L92nRRdjC7YxsMB_8bG5_m4OHI/edit" style="font-size:23px"><b>RESUME</b></a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <h1>Hello World,</h1>
+    <h5>I am <b>Vedang Joshi</b>, I am <span id="age"></span> years old.
+      I am currently persuring <b>B.E Computer Science (2018-22)</b> from <span>
+      <b><a href="http://ietdavv.edu.in" target="_blank">IET-DAVV </a></b></span>.
+      I have always been passionate about Techonology and Science, I love <a href="#">bulding stuff</a>
+      and reading about Techonology.
+    </h5>
+    <div class="container center">
+      <br>
+      <a class="btn-floating btn-large waves-effect waves-light blue"
+      style="margin:10px;" href="#hand"><i class="material-icons">details</i></a>
+    </div>
+  </div>
+  <div class="grey darken-4 center" id="turntableCon">
+    <div id="myTurntable" class="turntable">
+      <ul id="qwert">
+        <li data-img-src="i/Selection_002.png"></li>
+        <li data-img-src="i/Selection_003.png"></li>
+        <li data-img-src="i/Selection_004.png"></li>
+        <li data-img-src="i/Selection_005.png"></li>
+        <li data-img-src="i/Selection_006.png"></li>
+        <li data-img-src="i/Selection_007.png"></li>
+        <li data-img-src="i/Selection_008.png"></li>
+        <li data-img-src="i/Selection_009.png"></li>
+        <li data-img-src="i/Selection_010.png"></li>
+        <li data-img-src="i/Selection_011.png"></li>
+        <li data-img-src="i/Selection_012.png"></li>
+        <li data-img-src="i/Selection_013.png"></li>
+        <li data-img-src="i/Selection_014.png"></li>
+        <li data-img-src="i/Selection_015.png"></li>
+      </ul>
+    </div>
+  </div>
+  <div class="grey darken-4 center">
+    <a href="#">
+    <img src="git.jpeg" alt="Cursor" class="cursor1" id="git">
+    </a>
+    <a href="#">
+    <img src="twitter.jpeg" alt="Cursor" class="cursor" id="twit">
+    </a>
+    <a href="#">
+    <img src="quora.jpeg" alt="Cursor" class="cursor" id="quora">
+    </a>
+    <a href="#">
+    <img src="linked.jpeg" alt="Cursor" class="cursor" id="linked">
+    </a>
+    <a href="#">
+    <img src="insta.jpeg" alt="Cursor" class="cursor" id="insta">
+    </a>
+    <canvas id="canvas" width="786" height="1425"></canvas>
+  </div>
+
+  <div class="container">
+    <h2> Activity Status</h2>
+    <script src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js">
+</script>
+
+<!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->
+<link  rel="stylesheet" href="claendar.css" />
+    <ul class="collapsible">
+      <li class="active" style="overflow:hidden">
+        <div class="collapsible-header" ><i class="material-icons">blur_circular</i>Github</div>
+          <div class="collapsible-body calendar" style="overflow:scroll">
+            Loading...
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons">blur_circular</i>CodeChef</div>
+        <div class="collapsible-body">
+            <div class="row">
+              <div class="col s12 m6">
+                <div class="card center">
+                  <div class="card-content black-text">
+                    <span class="card-title" style="font-size:40px;">1927</span>
+                    <i class="medium material-icons center">star_border</i>
+                    <p>Highest rating: 2012</p>
+                  <div class="card-action">
+                    <div class="col s6">
+                      <p>539</p>
+                      <a href="#" style="color:blue;">Global Rank</a>
+                    </div><div class="col s6" >
+                      <p>539</p>
+                      <a href="#" style="color:blue;">Country Rank</a>
+                    </div>
+                    <br>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="active" style="overflow:hidden">
+        <div class="collapsible-header" ><i class="material-icons">blur_circular</i>Hackerank</div>
+          <div class="collapsible-body" style="overflow:scroll">
+            <div class="row" id="toberow">
+              <div class="col s3 center">
+                <svg id="color-fill" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+                   <text x="75" y="100" style="font-size:20" class="subject">Python</text>
+                   <text x="100" y="200" class="material-icons star" >star star</text>
+                </svg>
+              </div>
+            </div>
+        </div>
+      </li>
+    </ul>
+
+    <script>
+      new GitHubCalendar(".calendar", "vedangj044");
+    </script>
+
+  </div>
+
+
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script>
+  document.addEventListener('scroll', function() {
+    document.getElementById('navbar').style.opacity = pageYOffset/100;
+    document.getElementById('cla').style.filter = "blur("+String(pageYOffset/10)+"px)";
+  });
+  function diff_years(dt2, dt1)
+  {
+    var diff =(dt2.getTime() - dt1.getTime()) / 1000;
+    diff /= (60 * 60 * 24);
+    return Math.abs(Math.round(diff/365.25));
+  }
+  dt1 = new Date(2000,10,1);
+  dt2 = new Date();
+  dt3 = new Date(dt2.getFullYear(),dt2.getMonth(),dt2.getDate());
+  console.log(diff_years(dt1, dt3));
+  document.getElementById('age').innerHTML = diff_years(dt1, dt3);
+  </script>
+
+  <footer class="page-footer blue">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h4 class="white-text">Thank You <i class="material-icons medium">mood</i></h4>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Sincere gratitude to</h5>
+          <div class="row">
+            <div class="col s3"><a class="grey-text text-lighten-3" href="https://materializecss.com">
+              <img src="foot/material.webp" width=75 height=50>
+            </a></div><div class="col s3"><a class="grey-text text-lighten-3" href="https://polarnotion.github.io/turntable/">
+              <img src="foot/images.jpeg" width=75 height=50 style="border-radius:20px">
+            </a></div>
+            <div class="col s1"><a class="grey-text text-lighten-3" href="https://michalsnik.github.io/aos/">
+              <img src="foot/aos.jpg" width=75 height=50>
+            </a></div>
+          </div>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="https://github.com/IonicaBizau/github-calendar">IonicaBizau/github-calendar</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <pre>     Made with <i class="material-icons">favorite</i> by Vedang</pre>
+    </div>
+  </footer>
+
+</body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <script>
+   AOS.init();
+ </script>
+ <script>
+   document.addEventListener('DOMContentLoaded', function() {
+     var elems = document.querySelectorAll('.collapsible');
+     var instances = M.Collapsible.init(elems);
+   });
+ </script>
+ <script src="Turntable/js/turntable.min.js"></script>
+ <script>
+   $('#myTurntable').turntable({
+   axis: 'scroll',
+   reverse: true, // true or false, will reverse the array of images
+   scrollStart: 'top', // only necessary if axis = 'scroll'
+ });
+ </script>
+ <script type="text/javascript">
+ var canvas = document.getElementById("canvas");
+
+ var col;
+
+ function getPosition(obj) {
+     var curleft = 0, curtop = 0;
+     if (obj.offsetParent) {
+         do {
+             curleft += obj.offsetLeft;
+             curtop += obj.offsetTop;
+         } while (obj = obj.offsetParent);
+         return { x: curleft, y: curtop };
+     }
+     return undefined;
+ }
+
+ function rgbToHex(r, g, b) {
+     if (r > 255 || g > 255 || b > 255)
+         throw "Invalid color component";
+     return ((r << 16) | (g << 8) | b).toString(16);
+ }
+
+ function drawImageFromWebUrl(sourceurl){
+       var img = new Image();
+       img.setAttribute('crossOrigin', '');
+
+       img.addEventListener("load", function () {
+           // The image can be drawn from any source
+           canvas.getContext("2d").drawImage(img, 0, 0, img.width,    img.height, 0, 0, canvas.width, canvas.height);
+
+       });
+
+       img.setAttribute("src", sourceurl);
+ }
+
+ var current_image;
+ document.addEventListener("scroll",function(){
+   var x = document.getElementsByClassName("active")[1].childNodes[0].getAttribute("src");
+
+   if(current_image!=x){
+     drawImageFromWebUrl(x);
+     current_image=x;
+   }
+ });
+ //drawImageFromWebUrl("https://github.com/vedangj044/retech/blob/master/Screenshot%20(24).png");
+
+ canvas.addEventListener("mousemove",function(e){
+ 	  var pos = getPosition(this);
+     var x = e.pageX - pos.x;
+     var y = e.pageY - pos.y;
+     var coord = "x=" + x + ", y=" + y;
+     var c = this.getContext('2d');
+     var p = c.getImageData(x, y, 1, 1).data;
+
+     // If transparency on the image
+     if((p[0] == 0) && (p[1] == 0) && (p[2] == 0) && (p[3] == 0)){
+  				coord += " (Transparent color detected, cannot be converted to HEX)";
+     }
+
+     var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
+
+     document.getElementById("status").innerHTML = coord;
+     document.getElementById("color").style.backgroundColor = hex;
+
+     stone1 = ['#f6ff00', '#ffa800', '#f7ff00', '#ee7900', '#f6ff43', '#f3ff27', '#f3ff1e', '#f4ff0c', '#ffc400', '#fee200', '#ffcd00', '#ffaf00', '#fcd026', '#f8ff00', '#f3ff25', '#ffde00', '#f3ff47', '#ffbf00', '#ffbe00', '#ffbd00', '#fee508', '#ffe000', '#f9fb00', '#fcee00', '#ffdf00', '#f2ff00', '#f3ff33', '#ffc200', '#f5ff03', '#ffc100', '#f7ff15', '#f7ff09', '#f2ff0f', '#f9fb2c', '#fee100', '#f8fe05', '#f3ff00', '#f8fe36', '#ffb700', '#ffab00', '#ffb000', '#f4ff56', '#ffc900', '#f9f90f', '#ffca19', '#ffcf00', '#f8fd00', '#faf601', '#f2ff13', '#fbf000', '#f9f800', '#f4ff4c', '#f8ff31', '#f7ff18', '#faf500', '#faf61b', '#f3ff4a', '#ffc300', '#f8fe18', '#ffc600', '#f5ff00', '#f4ff10', '#fee529', '#f3ff37', '#fcec00', '#ffac00', '#ffd900', '#f5ff08', '#ffdf11', '#f3ff02', '#ffdb00', '#f5ff0c', '#ff8900', '#f5ff39', '#f37a00', '#ffcb00', '#f9f900', '#f4ff00'];
+
+     stone2 = ['#ff0008', '#ff838d', '#ff0020', '#ff7881', '#ff7e8d', '#ff003a', '#ff0019', '#ff0034', '#ff294d', '#ff3c53', '#ff7580', '#ff6f78', '#ff0028', '#fd0000', '#e20000', '#ff777e', '#ff1241', '#ff0038', '#fd0003', '#ff7e8e', '#ff193e', '#ff0017', '#ff717d', '#ff0035', '#ff003d', '#ec0000', '#c80000', '#ff0016', '#ff002b', '#ff000c', '#ff0037', '#ff0026', '#e40003', '#ff0000', '#ff0013', '#ff001e', '#ff0022', '#ff0030', '#ff001b', '#ff002f', '#ff002d', '#ff083b', '#ff0024', '#ff0023', '#ff000d', '#ff0010', '#f70000', '#f50003', '#ff0004'];
+
+     stone3 = ['#00f0ff', '#00f3ff', '#00fbff', '#00d2ff', '#00f9ff', '#00d9ff', '#00f1ff', '#14b8f8', '#3a8bcb', '#00dfff', '#00e6ff', '#5c5a78', '#546188', '#00f8ff', '#00fdff', '#00ddff', '#516e9b', '#00ffff'];
+
+     stone4 = ['#71115f', '#d700c3', '#762958', '#f500ee', '#ff00ed', '#5c293d', '#fb00f9', '#6b4848', '#ff00ec', '#ff00ee', '#8b266c', '#f800f5', '#ff00fb', '#833562', '#ff00f6', '#fd00fa', '#652144', '#9d008e', '#681a46', '#ff00fd', '#ff4fff', '#ff00f4', '#ef00ee', '#7c3858', '#6f444a', '#fc00f9', '#ff6dff', '#f200d8', '#8d007a', '#911e76', '#ff00fa', '#ab0093', '#6d3f3d', '#ff00fe', '#7c5a57', '#ec00d3', '#70214f', '#e300ce', '#ff00ff'];
+
+     stone5 = ['#c8d54b', '#908f39', '#939244', '#fefffa', '#888640', '#f5ff80', '#ccdb4b', '#f4ff63', '#f3ff3d', '#f4ff56', '#f9ffc0', '#afb156', '#f6ff98', '#c2c93e', '#9fa03c', '#f2ff47', '#f6ff89', '#fbffd8', '#b5b73e', '#a5b319', '#f5ff71', '#f8ffb7', '#77791a', '#9aa336', '#f9ffb9', '#d2e14c', '#f4ff50', '#73731f', '#f6ff95', '#f5ff7a', '#f7ff9b', '#f2ff43', '#f2ff3c', '#f4ff70', '#f5ff7b', '#f8ffb2', '#8a951a', '#f3ff21', '#757324', '#f7ffa5', '#d2e14a', '#daed4d', '#f2ff27', '#f5ff7d', '#d4d942', '#b4ad60', '#fcffe0', '#f9ffc4', '#f3ff40', '#f5ff78', '#ecff26', '#aa974f', '#f3ff4f', '#82892f', '#f9ffbf', '#f4ff6a', '#fbffd7', '#f9ffbc', '#f9ffb8', '#ada056', '#78762e', '#faffca', '#f4ff67', '#f8ffaf', '#747221', '#f1ff37', '#f6ff91', '#f8ffaa', '#e7e900', '#fdffed', '#e7f02a', '#f4ff5d', '#f7ffa1', '#efff33', '#798314', '#faffd0', '#faffcd', '#f4ff59', '#a0a02a', '#e6f030', '#f3ff44', '#f9ffc3', '#fefff9', '#faffc5', '#f4ff48', '#c8d32d', '#d6d921', '#8e9739', '#dfe802', '#b9b84c', '#f6ff88', '#f3ff53', '#f7ffa8', '#f0fd30', '#fcffe6', '#f3ff3b', '#878b34', '#bbb929', '#707017', '#faffcf', '#ecfd15', '#eeff1e', '#fefff6', '#f3ff46', '#f4ff6e', '#e9f145', '#989846', '#7d8616', '#ae9f56', '#f2ff29', '#f6ff8f', '#f3ff1e', '#828621', '#fcffdf', '#b5b631', '#f3ff47', '#f5ff82', '#a1a24b', '#a6a64b', '#f3ff4a', '#969d3d', '#d2df4b', '#9ea936', '#c5cb18', '#d3e24b', '#edff40', '#f3ff2b', '#faffc7', '#b9c241', '#faffcc', '#b0ae61', '#f4ff66', '#d4d719', '#f4ff68', '#efff25', '#fdffea', '#f4ff5b', '#b6ae5b', '#d1db10', '#f5ff7e', '#c3c42f', '#aeb538', '#f3ff2e', '#f5ff75', '#f4ff61', '#9a9a4f', '#faffc6', '#f0ff42', '#f5ff87', '#f3ff4b', '#c2c53d', '#f6ff8c', '#e2e500', '#f4fe00', '#cdd643', '#fdffe8', '#f4ff5c', '#a9a359', '#f3ff31', '#9aa228', '#979f38', '#f4ff57', '#f3ff37', '#878544', '#fbffd5', '#dadf43', '#808728', '#f6ff99', '#faffd1', '#f3ff50', '#fefff1', '#707315', '#727418', '#b3ba40', '#e8fa4d', '#f3ff35', '#c3c065', '#f7ffa3', '#f1ff39', '#9aa43c', '#f6ff92', '#e1f14c', '#f4ff64', '#ffffff', '#939b21', '#a5b026', '#a7a934', '#f8ffb1', '#f6ff96', '#f3ff30', '#b3b34a', '#c8cd00', '#fbffdb', '#bfc63e', '#e3ee05', '#f5ff74', '#8f8e29', '#a9b327', '#dde000', '#76752b', '#f7ffa9', '#778014', '#d6df12', '#bebe3e', '#f9ffc1', '#f8ffae', '#e7f74d', '#fcffe1', '#90983b', '#f3ff41', '#7d8614', '#f6ff93', '#c0bc63', '#bccc16', '#f2ff30', '#f7ff9c', '#848334', '#f8ffb5', '#aba455', '#fffffe', '#94983f', '#f7ff9f', '#f3ff4e', '#f4ff6d', '#f7ff9d', '#f7ffa7', '#dbe849', '#aaab24', '#869016', '#bebe41', '#becf15', '#818c16', '#a4a542', '#f4ff5e', '#f3ff00', '#c7ca2b', '#878c2d', '#797d1c', '#f2ff4e', '#f2ff25', '#f8ffb6', '#978a39', '#96a23b', '#f2ff45', '#727516', '#f8ffb3', '#727718', '#f5ff85', '#f4ff54', '#d2de47', '#fdffec', '#fffffc', '#f6ff8b', '#7b8515', '#fbffd4', '#f3ff56', '#fcffe4', '#dbe30e', '#c6cb2a', '#faffc8', '#f8ffab', '#f8ffad', '#86892e', '#cac855', '#b8b62b', '#8c9428', '#9aa52c', '#f2ff2b', '#f9ffc2', '#848438', '#f3ff3a', '#e7f509', '#a49f47', '#847d24', '#f6ff97', '#c6d12c', '#6f7016', '#f3ff2d', '#a9b340', '#f7ff9a', '#faffc9', '#f7ff9e', '#f5ff76', '#f5ff73', '#c2c61c', '#fbffd6', '#f3ff52', '#c8d040', '#f5ff77', '#fbffd9', '#f6ff90', '#afaa5c', '#f3ff33', '#f8ffb4', '#f7ffa4', '#f2ff57', '#f2ff44', '#f5ff86', '#bfc05e', '#bbbd22', '#f3ff4c', '#e1eb2b', '#f5ff7c', '#f5ff7f', '#f9ffba', '#f4ff6f', '#f9ffbe', '#949e39', '#b1b060', '#f3ff3e', '#f4ff58', '#f2ff4d', '#f1fe2a', '#f4ff6c', '#b2b73a', '#f5ff84', '#cdd744', '#939e3b', '#f7ffa6', '#d8e247', '#acac36', '#f8ffb0', '#efff3e', '#c0c53b', '#76791b', '#d9e22c', '#9c9648', '#f9ffbd', '#bfc23b', '#9da83d', '#f5ff83', '#a2a340', '#f6ff8d', '#f4ff60', '#f3ff3c', '#e4ed2d', '#f3ff48', '#f4ff62', '#f7ffa2', '#aa984f', '#94913f', '#b2b32e', '#f6ff8e', '#b19e5b', '#edf142', '#f4ff69'];
+
+     common = ['#f3ff1e','#f3ff47','#f3ff33','#f3ff00','#f4ff56','#f3ff4a','#f3ff37'];
+
+
+     if(stone1.includes(hex)){
+       $("#twit").show().css({
+         "left": e.clientX-50,
+         "top": e.clientY-50,
+         "display": "block",
+       });
+     }
+
+
+     else if(stone2.includes(hex)){
+       $("#quora").show().css({
+         "left": e.clientX-50,
+         "top": e.clientY-50,
+         "display": "block",
+       });
+     }
+
+     else if(stone3.includes(hex)){
+       $("#linked").show().css({
+         "left": e.clientX-50,
+         "top": e.clientY-50,
+         "display": "block",
+       });
+
+     }
+
+     else if(stone4.includes(hex)){
+       $("#insta").show().css({
+         "left": e.clientX-50,
+         "top": e.clientY-50,
+         "display": "block",
+       });
+
+     }
+
+     else if(stone5.includes(hex)){
+       $("#git").show().css({
+         "left": e.clientX-50,
+         "top": e.clientY-50,
+         "display": "block",
+       });
+     }
+
+     else{
+       $(".cursor").show().css({
+         "display": "none",
+       });
+       $(".cursor1").show().css({
+         "display": "none",
+       });
+     }
+ },false);
+
+ </script>
+
+ <script type="text/javascript">
+
+     fetch("https://spreadsheets.google.com/feeds/cells/1_9r0k6sFJgNityvECFr-eAvEeh-OBsIWWdV2WAH5Yq4/1/public/full?alt=json").then(response => {
+       return response.json()
+     })
+     .then(data => {
+       var arr = data.feed.entry;
+       console.log(arr.length);
+       for(var x of arr){
+         str2 = x.content.$t;
+         console.log(str2);
+         var subject = document.getElementsByClassName("subject");
+         for(var y=0; y<subject.length; y++){
+           console.log("for");
+           if(subject[y].textContent === str2.split(" ").slice(1).join(" ")){
+             console.log("if "+subject[y].textContent);
+             star = document.getElementsByClassName('star')[y].textContent.split(" ").length;
+             if(parseInt(str2.split(" ")[0]) > star){
+               var new1 = "";
+               var number = parseInt(str2.split(" ")[0]);
+               for(var i=0; i<number; i++){
+                 new1+="star ";
+               }
+               document.getElementsByClassName('star')[y].innerHTML=new1;
+             }
+             else{
+               console.log("updated");
+             }
+             break;
+           }
+           else{
+             console.log("else");
+             var arr1 = [];
+             for(var y=0; y<subject.length; y++){
+               arr1.push(subject[y].textContent);
+             }
+             if(arr1.includes(str2.split(" ").slice(1).join(" "))){
+               break;
+             }
+             var new1 = "";
+             for(var i=0; i<parseInt(str2.split(" ")[0]); i++){
+               new1+="star ";
+             }
+             var divi = document.createElement("div");
+             divi.setAttribute("class", "col s3 center");
+             divi.innerHTML =
+               '<svg id="color-fill" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">\n'+
+                 '<polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>\n'+
+                  '<text x="75" y="100" style="font-size:20" class="subject">'+str2.split(" ").slice(1).join(" ")+'</text>\n'+
+                  '<text x="100" y="200" class="material-icons star">'+new1+'</text>\n'+
+               '</svg>\n'
+
+             document.getElementById('toberow').appendChild(divi);
+           }
+         }
+       }
+     })
+     .catch(err => {})
+ </script>
+
+</html>
