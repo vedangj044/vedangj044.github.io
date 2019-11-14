@@ -166,7 +166,7 @@
     <a href="#">
     <img src="insta.jpeg" alt="Cursor" class="cursor" id="insta">
     </a>
-    <canvas id="canvas" width="786" height="1425"></canvas>
+    <canvas id="canvas" max-width="786" max-height="1425"></canvas>
   </div>
 
   <div class="container">
@@ -336,16 +336,8 @@
        img.setAttribute("src", sourceurl);
  }
 
- var current_image;
- document.addEventListener("scroll",function(){
-   var x = document.getElementsByClassName("active")[1].childNodes[0].getAttribute("src");
 
-   if(current_image!=x){
-     drawImageFromWebUrl(x);
-     current_image=x;
-   }
- });
- //drawImageFromWebUrl("https://github.com/vedangj044/retech/blob/master/Screenshot%20(24).png");
+ drawImageFromWebUrl("https://dl.dropboxusercontent.com/1/view/zwji1ssl6zgk7fl/Selection_015.png");
 
  canvas.addEventListener("mousemove",function(e){
  	  var pos = getPosition(this);
