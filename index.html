@@ -336,8 +336,15 @@
        img.setAttribute("src", sourceurl);
  }
 
-
- drawImageFromWebUrl("https://dl.dropboxusercontent.com/1/view/zwji1ssl6zgk7fl/Selection_015.png");
+ var current_image;
+ document.addEventListener("scroll",function(){
+   var x = document.getElementsByClassName("active")[1].childNodes[0].getAttribute("src");
+   if(current_image!=x){
+     drawImageFromWebUrl(x);
+     current_image=x;
+   }
+ });
+// drawImageFromWebUrl("https://dl.dropboxusercontent.com/1/view/zwji1ssl6zgk7fl/Selection_015.png");
 
  canvas.addEventListener("mousemove",function(e){
  	  var pos = getPosition(this);
