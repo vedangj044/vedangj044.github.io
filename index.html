@@ -25,7 +25,7 @@
     }
     #cla{
       height: 100%;
-      background-image: url('back.JPG');
+      background-image: url('back.jpg');
       background-repeat: no-repeat;
       background-size: cover;
     }
@@ -52,7 +52,15 @@
      height: 1000px;
      cursor: none;
     }
+    .notice {
+      display: none;
+      visibility: hidden;
+    }
 
+    @media screen and (max-width:900px), screen and (max-height:500px) {
+        canvas { display: none !important; }
+        .notice  { display: block; visibility: visible; }
+    }
     .cursor {
      position: relative;
      width: 200px;
@@ -76,6 +84,14 @@
     #insta{
       display: none;
     }
+    @media (max-width: 600px) {
+        #cla {
+          background-image: url('dback.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
+    }
 
     .cursor1{
       position: relative;
@@ -96,7 +112,7 @@
 
 
   <div data-aos="fade-up">
-     <div class="container" id="nameW">
+     <div id="nameW">
          <h1 id="name">Vedang Joshi</h1>
          <h6> Microsoft Student Partner 2019-20 </h6>
          <h6> B.E Computer Science 2018-22</h6>
@@ -121,8 +137,8 @@
     <h5>I am <b>Vedang Joshi</b>, I am <span id="age"></span> years old.
       I am currently persuring <b>B.E Computer Science (2018-22)</b> from <span>
       <b><a href="http://ietdavv.edu.in" target="_blank">IET-DAVV </a></b></span>.
-      I have always been passionate about Techonology and Science, I love <a href="#">bulding stuff</a>
-      and reading about Techonology.
+      I have always been passionate about Technology and Science, I love <a href="#">building stuff</a>
+      and reading about Technology.
     </h5>
     <div class="container center">
       <br>
@@ -151,23 +167,46 @@
     </div>
   </div>
   <div class="grey darken-4 center">
-    <a href="#">
+    <a href="https://github.com/vedangj044" target="_blank">
     <img src="git.jpeg" alt="Cursor" class="cursor1" id="git">
     </a>
-    <a href="#">
+    <a href="https://twitter.com/vedang16" target="_blank">
     <img src="twitter.jpeg" alt="Cursor" class="cursor" id="twit">
     </a>
-    <a href="#">
+    <a href="https://www.quora.com/profile/Vedang-Joshi-7" target="_blank">
     <img src="quora.jpeg" alt="Cursor" class="cursor" id="quora">
     </a>
-    <a href="#">
+    <a href="https://www.linkedin.com/in/vedang-j-783b6397/" target="_blank">
     <img src="linked.jpeg" alt="Cursor" class="cursor" id="linked">
     </a>
-    <a href="#">
+    <a href="https://www.instagram.com/vedang.insta/?igshid=1ldladvib57w3" target="_blank">
     <img src="insta.jpeg" alt="Cursor" class="cursor" id="insta">
     </a>
     <canvas id="canvas" width="786" height="1425"></canvas>
   </div>
+
+<div class="container notice center">
+
+  <a href="https://github.com/vedangj044" target="_blank" >
+    <h1 style="border: 1px solid black;display: inline-block; padding: 15px;border-radius:5px;">Github</h1>
+  </a>
+  <a href="https://twitter.com/vedang16" target="_blank">
+    <h1 style="border: 1px solid black;display: inline-block; padding: 15px;border-radius:5px;">Twitter</h1>
+  </a>
+  <a href="https://www.quora.com/profile/Vedang-Joshi-7" target="_blank">
+    <h1 style="border: 1px solid black;display: inline-block; padding: 15px;border-radius:5px;">Quora</h1>
+
+  </a>
+  <a href="https://www.linkedin.com/in/vedang-j-783b6397/" target="_blank">
+    <h1 style="border: 1px solid black;display: inline-block; padding: 15px;border-radius:5px;">Linkedin</h1>
+
+  </a>
+  <a href="https://www.instagram.com/vedang.insta/?igshid=1ldladvib57w3" target="_blank">
+    <h1 style="border: 1px solid black;display: inline-block; padding: 15px;border-radius:5px;">Instagram</h1>
+
+  </a>
+</div>
+
 
   <div class="container">
     <h2> Activity Status</h2>
@@ -190,7 +229,8 @@
               <div class="col s12 m6">
                 <div class="card center">
                   <div class="card-content black-text">
-                    <span class="card-title" style="font-size:40px;">1927</span>
+                    <p>Not yet started</p>
+                    <span class="card-title" style="font-size:40px;">####</span>
                     <i class="medium material-icons center">star_border</i>
                     <p>Highest rating: 2012</p>
                   <div class="card-action">
