@@ -23,6 +23,17 @@
       bottom: 0%;
       width: 100%;
     }
+    #blco{
+      display: none;
+    }
+    @media only screen and (max-width: 500px) {
+      #texta {
+        display: none;
+      }
+      #blco{
+        display: block;
+      }
+    }
     </style>
 
   </head>
@@ -31,9 +42,12 @@
 
     <nav>
       <div class="nav-wrapper blue">
-        <a href="#" class="brand-logo center">Live Update on Corona Virus for India</a>
+        <a id="texta" href="#" class="brand-logo center">Live Update on Corona Virus for India</a>
       </div>
     </nav>
+    <div class="container" id="blco">
+      <h3> Live Update on Corona Virus for India </h3>
+    </div>
 
     <div class="container page center">
 
