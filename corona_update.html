@@ -81,6 +81,7 @@
     <!--JavaScript at end of body for optimized loading-->
   </body>
   <script type="text/javascript">
+    var newDate = new Date().toLocaleTimeString();
     function q(res){
       response =
       "<h5>Total Cases: <b>"+res["Total Cases"]+"</b></h5>"+
@@ -90,14 +91,15 @@
       "<h5>Total recovered: <b>"+res["Total recovered"]+"</b></h5>"+
       "<h5>Active cases: <b>"+res["Active cases"]+"</b></h5>"+
       "<h5>Serious cases: <b>"+res["Serious cases"]+"</b></h5>"+
-      "<h5>Top cases/1M Pop: <b>"+res["Top cases/1M Pop"]+"</b></h5>"+
-      "<h5>Time: <b>"+res["Time"]+"</b></h5>"
+      "<h5>Total cases/1M Pop: <b>"+res["Top cases/1M Pop"]+"</b></h5>"+
+      "<h5>Time: <b>"+newDate+"</b></h5>"
       document.getElementById('main').innerHTML = response
     }
 
     fetch("https://coronaindiaupdate.herokuapp.com/")
     .then(resp => resp.json())
     .then(res => q(res))
+
   </script>
 
 </html>
