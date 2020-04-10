@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>VR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <script
+       src="https://code.jquery.com/jquery-2.2.4.js"
+       integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+       crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style media="screen">
+      body, html{
+        margin: 0px;
+        height: 100%;
+      }
+      .main{
+        background: #1E1E1E;
+        height: 100%;
+      }
+      #gameplay{
+        color: #1C86EE;
+        font-size: 60px;
+      }
+      .border12{
+        border: 2px solid #8db6cd;
+      }
+      input{
+        color: white;
+      }
+      i{
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container center">
+        <img src="1.png" style="height:50px;widht:100%">
+        <h2 id="gameplay" class="center"> Hello </h2>
+        <div class="border12">
+          <input id="resp" class="center" placeholder="Type..."> </input>
+        </div>
+        <br>
+        <i class="material-icons large white" id="next">navigate_next</i>
+      </div>
+    </div>
+    <script type="">
+      $("#next").click(function() {
+        var formdata = new FormData();
+        formdata.append("query", $("#resp").val());
+
+        var requestOptions = {
+          method: 'POST',
+          body: formdata,
+          redirect: 'follow'
+        };
+
+        fetch("https://coronaindiaupdate.herokuapp.com/", requestOptions)
+          .then(response => response.text())
+          .then(result => $("#gameplay").text(result))
+          .catch(error => console.log('error', error));
+
+        $("#resp").val("");
+      });
+
+    </script>
+
+  </body>
+</html>
