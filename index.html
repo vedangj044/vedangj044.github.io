@@ -303,6 +303,7 @@
   <!--JavaScript at end of body for optimized loading-->
   <script type="text/javascript" src="js/materialize.min.js"></script>
   <script>
+  setTimeout(function(){if(pageYOffset<=120){window.scrollBy(0, 120)}},3000);
   document.addEventListener('scroll', function() {
     document.getElementById('navbar').style.opacity = pageYOffset/100;
     document.getElementById('cla').style.filter = "blur("+String(pageYOffset/10)+"px)";
