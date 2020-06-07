@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ML Club</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style media="screen">
+      html{
+        height: 100%;
+      }
+      body{
+        background-color: #F4F4F4;
+        overflow: hidden;
+        height: 100%;
+      }
+      .gheader{
+        border-bottom-right-radius: 60px;
+        border-bottom-left-radius: 35px;
+        border-top-right-radius: 35px;
+        border-top-left-radius: 60px;
+        margin: 20px;
+        padding: 10px;
+        display: inline-block;
+        color: #687466;
+        border: 2px solid #084177;
+        box-shadow: 10px 10px 8px #888888;
+      }
+      .arrow{
+        position: relative;
+        top: 50%;
+      }
+      .grid-container{
+
+        display: grid;
+        grid-template-columns: 150px minmax(auto, 1200px) 150px;
+        justify-content: center;
+      }
+      .item1{
+        grid-row: 1;
+        grid-column: 1;
+      }
+      .item2{
+        grid-row: 1;
+        grid-column: 2;
+        border-radius: 50px;
+        box-shadow: 10px 10px 8px #888888;
+        height: 600px;
+      }
+      .item3{
+        grid-row: 1;
+        grid-column: 3;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container center">
+      <header class="gheader">
+        <h2 class="center"> Machine Learning Club IET-DAVV</h2>
+      </header>
+    </div>
+    <br>
+    <br>
+      <div class="grid-container">
+        <div class="item1 container center" ><i class="material-icons arrow">arrow_back</i></div>
+        <div class="item2 carousel carousel-slider">
+          <a class="carousel-item " href="#one!"><img src="s1.jpg" height="100%"/></a>
+          <a class="carousel-item " href="#one!"><img src="s2.jpg" height="100%"/></a>
+          <a class="carousel-item " href="#one!"><img src="s3.jpg" height="100%"/></a>
+        </div>
+        <div class="item3 container center" ><i class="material-icons arrow">arrow_forward</i></div>
+      </div>
+    <script>
+    $('.carousel.carousel-slider').carousel({
+      fullWidth: true,
+      indicators: true
+    });
+    </script>
+  </body>
+</html>
