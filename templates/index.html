@@ -1,5 +1,7 @@
+{% include "navbav.html" %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +9,19 @@
     <link href="{{get_url(path='styles/style.css')}}" rel="stylesheet" type="text/css"/>
     <title>Vedang Joshi</title>
 </head>
-<body class="bg-blue-200">
-    <h1 class="mx-20 font-size-36 text-yellow-500" >Vedang is awsome</h1>
+<body class="bg-gray-100 dark:bg-blackish" >
+    <div class="dark:text-white dark:text-opacity-80 lg:mx-72" >
+        {% block navbar %}{% endblock navbar %}
+        <div class="sm:my-24 flex flex-col-reverse sm:flex-row">
+            <div class="flex-1 flex flex-row justify-around px-2 sm:px-0">
+                <img class="sm:h-4/5 rounded-md shadow-xl" src="{{get_url(path='back.jpg')}}"/>
+            </div>
+            <div class="flex-1 px-4 py-8">
+                <h2 class="text-3xl sm:mt-8 text-gray-700 dark:text-gray-500" >Hey, I'm</h2>
+                <h1 class="text-7xl font-semibold">Vedang Joshi</h1>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

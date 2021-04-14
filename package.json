@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tailwind build styles/style.css -o static/styles/style.css",
-    "watch": "tailwind watch styles/style.css -o static/styles/style.css",
+    "build": "NODE_ENV=production  tailwind build styles/style.css -o static/styles/style.css",
+    "build:css": "tailwind build styles/style.css -o static/styles/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

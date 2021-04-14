@@ -1,0 +1,68 @@
+{% block navbar %}
+<div class="dark:text-white dark:text-opacity-80 lg:mx-72">
+    <nav class="py-4 px-6 flex flex-col sm:flex-row" >
+        <div class="flex-auto"> 
+            <h1 class="text-2xl font-semibold" ><a href="/">Vedang</a></h1>
+        </div>
+        <ul class="flex flex-row px-1 py-2 sm:py-0">
+            <li class="sm:px-2" >
+                <a class="cursor-pointer" id="theme-toggle" >
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </a>
+            </li>
+            <li class="px-2">
+                <a class="text-1xl border-b-2 border-transparent hover:border-gray-800 dark:hover:border-white" href="#">
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li class="px-2" >
+                <a class="text-1xl border-b-2 border-transparent hover:border-gray-800 dark:hover:border-white" target="_blank" href="https://vedangj044.github.io/blog/">
+                    <span>Blog</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <script>
+        // set initial state
+        var button = document.getElementById("theme-toggle");
+        var sun = document.getElementById("sun");
+        var moon = document.getElementById("moon");
+        var root = document.getElementsByTagName('html')[0]
+        var key = "dark";
+
+        function dar() {
+            sun.style.display = "none";
+            moon.style.display = "block";
+            root.classList.add("dark");
+            localStorage.setItem(key, "true");
+        }
+
+        function li() {
+            sun.style.display = "block";
+            moon.style.display = "none";
+            root.classList.remove("dark");
+            localStorage.setItem(key, "false");
+        }
+
+        if (localStorage.getItem(key) === null) {
+            li();
+        }
+        else if (localStorage.getItem(key) === "false") {
+            li();
+        }
+        else {
+            dar();
+        }
+
+        button.onclick = function() {
+            if (localStorage.getItem(key) === "true") {
+                li();
+            }
+            else {
+                dar();
+            }
+        }
+    </script>
+</div>
+{% endblock navbar %}
