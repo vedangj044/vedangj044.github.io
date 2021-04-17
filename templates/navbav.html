@@ -1,5 +1,5 @@
 {% block navbar %}
-<div class="dark:text-white dark:text-opacity-80 xl:mx-72">
+<div class="dark:text-white dark:text-opacity-80 xl:mx-72 z-0">
     <nav class="py-4 px-6 flex flex-col sm:flex-row" >
         <div class="flex-auto"> 
             <h1 class="text-2xl font-semibold" ><a href="/">Vedang</a></h1>
@@ -12,9 +12,17 @@
                 </a>
             </li>
             <li class="px-2">
-                <a class="text-1xl border-b-2 border-transparent hover:border-gray-800 dark:hover:border-white" href="#">
+                <a class="text-1xl border-b-2 border-transparent hover:border-gray-800 dark:hover:border-white cursor-pointer" id="contact">
                     <span>Contact</span>
                 </a>
+                <div id ="contact-form" class="border hidden border-gray-400 rounded-md p-3 flex-col fixed z-100 bg-white dark:bg-blackish sm:-mx-40 my-2">
+                    <h1 class="text-lg">Contact me</h1>
+                    <form class="flex flex-col dark:text-black" method="POST" id="contactForm" action="https://formspree.io/f/moqyverl">
+                        <input class="p-2 rounded-md flex-grow border border-gray-600" type="email" placeholder="Email" name="_replyto"/>
+                        <textarea class="my-2 p-2 h-64 rounded-md flex-grow border border-gray-600" name="message" form="contactForm" type="text" placeholder="Message"></textarea>
+                        <button class="rounded-md bg-blue-300 p-2" type="submit" value="Submit">Submit</button>
+                    </form>
+                </div>
             </li>
             <li class="px-2" >
                 <a class="text-1xl border-b-2 border-transparent hover:border-gray-800 dark:hover:border-white" target="_blank" href="https://vedangj044.github.io/blog/">
@@ -23,6 +31,7 @@
             </li>
         </ul>
     </nav>
+
     <script>
         // set initial state
         var button = document.getElementById("theme-toggle");
@@ -30,6 +39,9 @@
         var moon = document.getElementById("moon");
         var root = document.getElementsByTagName('html')[0]
         var key = "dark";
+
+        var contact = document.getElementById("contact");
+        var contactForm = document.getElementById("contact-form");
 
         function dar() {
             sun.style.display = "none";
@@ -62,6 +74,21 @@
             else {
                 dar();
             }
+        }
+
+        contact.onclick = function() {
+
+            if (contactForm.style.display == "flex") {
+                contactForm.style.display = "none";
+            }
+            else {
+                contactForm.style.display = "flex";
+            }
+        
+        }
+
+        document.onscroll = function() {
+            contactForm.style.display = "none";
         }
     </script>
 </div>

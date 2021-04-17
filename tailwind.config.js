@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       colors: {
         'blackish': "#1d1e20",
+        'readme': "#1d1e22"
       }
     },
   },
