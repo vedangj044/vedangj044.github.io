@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{get_url(path='styles/style.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{get_url(path='styles/markdown.css')}}" rel="stylesheet" type="text/css"/>
     <title>Vedang Joshi</title>
 </head>
 <body class="bg-gray-100 dark:bg-blackish z-0" >
@@ -55,7 +56,9 @@
             <div class="bg-blue-100 text-black rounded-md p-4 m-2">
                 <div class="flex py-3 items-baseline">
                     <h1 class="font-bold text-3xl flex-auto">Github</h1>
-                    <img class="h-6 w-6" src="https://cdn4.iconfinder.com/data/icons/web-links/512/41-512.png"/>
+                    <a href="https://github.com/vedangj044" class="inline-block">
+                        <embed class="h-5 w-5 pointer-events-none" src="{{get_url(path='foreign.svg')}}"/>
+                    </a>
                 </div>
                 
                 <div class="flex items-center">
@@ -85,7 +88,9 @@
             <div class="bg-red-100 text-black rounded-md p-4 m-2">
                 <div class="flex py-3 items-baseline">
                     <h1 class="font-bold text-3xl flex-auto">Codeforces</h1>
-                    <img class="h-6 w-6" src="https://cdn4.iconfinder.com/data/icons/web-links/512/41-512.png"/>
+                    <a href="https://codeforces.com/profile/vedangj044" class="inline-block">
+                        <embed class="h-5 w-5 pointer-events-none" src="{{get_url(path='foreign.svg')}}"/>
+                    </a>
                 </div>
                 
                 <div class="flex items-center">
@@ -107,7 +112,9 @@
             <div class="bg-yellow-100 text-black rounded-md p-4 m-2">
                 <div class="flex py-3 items-baseline">
                     <h1 class="font-bold text-3xl flex-auto">Codechef</h1>
-                    <img class="h-6 w-6" src="https://cdn4.iconfinder.com/data/icons/web-links/512/41-512.png"/>
+                    <a href="https://www.codechef.com/users/vedangj044" class="inline-block">
+                        <embed class="h-5 w-5 pointer-events-none" src="{{get_url(path='foreign.svg')}}"/>
+                    </a>
                 </div>
                 
                 <div class="flex items-center">
@@ -128,13 +135,9 @@
             </div>
         </div>
 
-        <div class="border border-gray-400 dark:border-gray-600 rounded-lg p-5 m-3 dark:bg-readme">
-            <h1 class="text-3xl" >About me </h1>
-
-            <p class="text-lg">
-                I am Vedang. I have always loved technology and science. 
-
-            </p>
+        <div class="post-content border border-gray-400 dark:border-gray-600 rounded-lg p-3 m-3 dark:bg-readme">
+            
+            {{ section.content | safe }}
 
         </div>
 
