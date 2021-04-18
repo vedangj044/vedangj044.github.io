@@ -4,7 +4,7 @@ paginate_by = 1
 
 # ![alien](https://github.githubassets.com/images/icons/emoji/unicode/1f47d.png) About me
 
-I am currently a college student. I love programming and build DIY stuff with Arduino and ESPes. I have been tinkering with DIY electronics since the age of 12. I am also an open source contributor and I have deep respect for open source. Other than open source, I love hackathons. I have participated in many hackathons with my team Blueprint and also won a few. I spend my day in front of the computer learning something new. I am also a part of many open communities in my city. Attending meetups and talks energizes me. I have also arranged and spoken at some meetups cause I love to go up the stage and speak to the public.
+I am currently a college student. I am fond of programming and building DIY stuff with Arduino and ESPes. I have been tinkering with DIY electronics since the age of 12. I am also an open source contributor and I believe in open source. Other than open source, I am zealous about hackathons. I have participated in many hackathons with my team Blueprint and also won at a few. I spend my day in front of the computer learning something new. I am also a part of many open communities in my city. Attending meetups and talks energizes me. I have also arranged and spoken at some meetups as I enjoy public speaking.
 <br/>
 <br/>
 While I am not programming. I enjoy reading books, spending time with my friends, and vibing to music. I am driven by creativity and optimization.
@@ -12,10 +12,10 @@ While I am not programming. I enjoy reading books, spending time with my friends
 ## ![artist pallere](https://github.githubassets.com/images/icons/emoji/unicode/1f3a8.png) Skills
 <hr/>
 
-I started with programming Arduino, then I moved to Python. I love Flask, Django, and FastAPI which is my go-to stack for Web development. I worked with javascript too and made few projects on React, but I have realized I don't enjoy front-end and UI much. I have also build Android apps and worked as an Intern Android Developer. I like Java for its verbosity but only when used in Android studio. Soon, I switched to Kotlin for Android apps because all cool things in the Android world happen in Kotlin these days. The Newest addition to my tool-set is Rust. I have enjoyed it very much.
+I started with programming Arduino, then I moved to Python. I love Flask, Django, and FastAPI which is my go-to stack for Web development and I have worked with javascript and React, but I have realized I don't enjoy front-end and UI much. I have also build Android apps and worked as an Intern Android Developer. I like Java for its verbosity but only when used in Android studio. Soon, I switched to Kotlin for Android apps because all cool things in the Android world happen in Kotlin lately. The Newest addition to my tool-set is Rust. I have enjoyed it very much.
 <br/>
 <br/>
-I use Azure for learning and experimentation. I have done many Qiwiklabs for GCP as well. I use Docker in my projects I also have a working knowledge of Kubernetes.
+I use Azure for learning and experimentation. I have done many Qiwiklabs for GCP as well. I use Docker in my projects. I also have a working knowledge of Kubernetes.
 
 ## ![open file folder](https://github.githubassets.com/images/icons/emoji/unicode/1f4c2.png) Projects
 <hr/>

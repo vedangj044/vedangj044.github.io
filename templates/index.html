@@ -35,24 +35,24 @@
         "@id": "http://vedangj044.github.io",
         "@type": "WebPage",
         "creator":  {
-        "@id": "http://vedangj044.github.io",
-        "@type": "Person",
-        "name": "Vedang Joshi",
-        "image": {
-            "@id": "https://media-exp1.licdn.com/dms/image/C5103AQEl3rIanId4zw/profile-displayphoto-shrink_200_200/0?e=1591228800&v=beta&t=HA4t3Tz0vbt7j_yurbnDV9jF1YGhKA9G-MTm9KHiSW0",
-            "@type": "ImageObject",
-            "caption": "Vedang Joshi"
-        },
-        "url" : "http://vedangj044.github.io",
-        "nationality": {
-            "@type": "Country",
-            "name": "India"
-        },
-        "sameAs": [
-            "https://twitter.com/vedang16",
-            "https://www.linkedin.com/in/vedang-j-783b6397/",
-            "https://github.com/vedangj044"
-        ]
+            "@id": "http://vedangj044.github.io",
+            "@type": "Person",
+            "name": "Vedang Joshi",
+            "image": {
+                "@id": "https://vedangj044.github.io/back.jpg",
+                "@type": "ImageObject",
+                "caption": "Vedang Joshi"
+            },
+            "url" : "http://vedangj044.github.io",
+            "nationality": {
+                "@type": "Country",
+                "name": "India"
+            },
+            "sameAs": [
+                "https://twitter.com/vedang16",
+                "https://www.linkedin.com/in/vedang-j-783b6397/",
+                "https://github.com/vedangj044"
+            ]
         }
     }
     </script>
@@ -60,7 +60,7 @@
         {% block navbar %}{% endblock navbar %}
         <div class="flex-grow sm:my-24 flex flex-col-reverse sm:flex-row">
             <div class="flex-1 flex flex-row justify-around px-2 sm:px-0">
-                <img class="sm:h-4/5 rounded-md shadow-xl" src="{{get_url(path='back.jpg')}}"/>
+                <img style="max-height: 600px;" class="sm:h-4/5 rounded-md shadow-xl" src="{{get_url(path='back.jpg')}}"/>
             </div>
             <div class="flex-1 px-4 py-8">
                 <h2 class="text-3xl sm:mt-8 text-gray-700 dark:text-gray-500" >Hey, I'm</h2>
@@ -110,7 +110,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
                         <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/>
                     </svg>
-                    <h2 class="flex-auto px-1" >Total contribution</h2>
+                    <h2 class="flex-auto px-1" >Total Contribution</h2>
                     <h2 class="font-bold px-3" id="github_contribution" ></h2>
                 </div>
 
