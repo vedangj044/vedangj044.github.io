@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    .post-content a{
+        @apply text-bluish dark:text-indigo-300
+    }
+}

@@ -3,11 +3,10 @@
 }
 .post-content h1 {
     margin-top: 20px;
-    margin-bottom: 32px;
+    margin-bottom: 10px;
 }
 .post-content h2 {
     margin-top: 32px;
-    margin-bottom: 24px;
 }
 .post-content h3,
 .post-content h4,
@@ -18,9 +17,14 @@
 }
 .post-content h1 {
     font-size: 40px;
+    display: flex;
+    align-items: baseline;
 }
 .post-content h2 {
-    font-size: 32px;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: baseline;
 }
 .post-content h3 {
     font-size: 24px;
@@ -52,6 +56,9 @@
 .post-content ol,
 .post-content dl {
     margin-bottom: var(--content-gap);
+}
+.post-content ul {
+    list-style-type: circle;
 }
 .post-content ul,
 .post-content ol {
@@ -94,6 +101,12 @@
 .post-content table th {
     font-size: 14px;
     text-align: left;
+}
+.post-content img {
+    width: 2.rem;
+    height: 2rem;
+    margin-left: 3px;
+    margin-right: 3px;
 }
 .post-content table:not(.highlighttable) td code:only-child {
     margin-left: 0;
@@ -162,13 +175,11 @@
     border-left: 3px solid var(--primary);
 }
 .post-content hr {
-    height: 1px;
-    margin-top: 56px;
-    margin-bottom: 56px;
-    background: var(--tertiary);
-    border-top: 0;
-    border-bottom: 0;
+    border-top: 1px solid rgb(116, 120, 128);
+    opacity: 0.5;
+    margin-bottom: 12px;
 }
+
 .post-content iframe {
     max-width: 100%;
 }
