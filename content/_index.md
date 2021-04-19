@@ -29,4 +29,5 @@ I use Azure for learning and experimentation. I have done many Qiwiklabs for GCP
 ## ![Radio](https://github.githubassets.com/images/icons/emoji/unicode/1f4fb.png) Contact
 <hr/>
 
-You can use the contact form added in the navbar or any social link mentioned alongside the photo to get in touch with me.
+- [Contact button](/#contact)
+- [vedangj044@gmail.com](mailto:vedangj044@gmail.com)
