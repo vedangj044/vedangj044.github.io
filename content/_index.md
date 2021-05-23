@@ -21,7 +21,7 @@ I use Azure for learning and experimentation. I have done many Qiwiklabs for GCP
 <hr/>
 
 - [Paradigm](https://github.com/Paradigm-shift-AI), is an automated testing tool. It is a plugin that converts whatever is taught in an online class to True/False and Fill in the blanks question and sends them to the students' smartphone in real-time. This helps improve attentiveness and retention in students.
-- [Famulus](https://github.com/vedangj044/News_stock_prediction), is an intelligent stock prediction tool. Then the users input a keyword, this tool analyses all the latest news articles to predict the change in the value of this stock in an interval of 1, 5, 7, 15 days.
+- [Famulus](https://github.com/vedangj044/News_stock_prediction), is an intelligent stock prediction tool. Then the users input a keyword, this tool analyses all the latest news articles to predict the change in the value of this stock in an interval of 1, 5, 7, 15 days. [Read more](https://vedangj044.github.io/blog/famulus/)
 - [Frisson](https://github.com/vedangj044/Frisson), is a very simple android app to read stories about UFO sightings. It was built with Kotlin, following all aspects of MAD aka Modern Android Development.
 - [Music Wall](https://github.com/vedangj044/MusicWallProject), is a Web App, it creates a beautiful Music wall webpage for you, whenever you like a music video, it is added to this page, thus you can share your music interests with friends.
 - Assistant, is a script that adds voice commands to simple tasks. It uses IFTT and thus works with Google Assistant, Alexa, or even automatic.
