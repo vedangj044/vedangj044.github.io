@@ -17,9 +17,16 @@
                 </a>
                 <div id ="contact-form" class="border hidden border-gray-400 rounded-md p-3 flex-col fixed z-100 bg-white dark:bg-blackish sm:-mx-40 my-2">
                     <h1 class="text-lg">Contact me</h1>
-                    <form class="flex flex-col dark:text-black" method="POST" id="contactForm" action="https://formspree.io/f/moqyverl">
+                    <div class="flex my-2 items-center">
+                        <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                            <input type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                            <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                        </div>
+                        <label for="toggle" class="text-xs text-gray-700 dark:text-white">Encrypt message</label>
+                    </div>
+                    <form class="flex flex-col dark:text-black" id="contactForm" >
                         <input class="p-2 rounded-md flex-grow border border-gray-600" type="email" placeholder="Email" name="_replyto"/>
-                        <textarea class="my-2 p-2 h-64 rounded-md flex-grow border border-gray-600" name="message" form="contactForm" type="text" placeholder="Message"></textarea>
+                        <textarea id="message" class="my-2 p-2 h-64 rounded-md flex-grow border border-gray-600" name="message" form="contactForm" type="text" placeholder="Message"></textarea>
                         <button class="rounded-md bg-blue-300 p-2" type="submit" value="Submit">Submit</button>
                     </form>
                 </div>
@@ -90,6 +97,81 @@
         document.onscroll = function() {
             contactForm.style.display = "none";
         }
+
+        // Encryption
+        async function encryptPGP() {
+
+            const plt = `-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mQENBGCz0+IBCADFbyeTZILPCIARRqpvg09B5G/0dHHEoM0Er0N5UH7HOHe9j7KI
+bAE5CcboDWVc05C4iqjEjtopSiG0DBJAhppi8S90ycrA5snRtxD3sDMawIioVsdg
+2LSZVhyB66Q0gyepbnh3kWOqLtXWVCZWiLsisTyqB6Tb+3ly83gvWvnBbbOCGCma
+RyRg+4UIqDhSZBpqpMo2rkIE6vgcqDQBvDEu5p7fM7pIK7EdRbjsN5zr8uiqxR9Q
+U6IbajyUcnZ4Klw8MSk82gmN4XwLLiEhVQDZLqqLU1gs26m//AQFdAqH+zYXuxpH
+oS1DW2J3aZRELN72FI0r3sAqnAbH3EeJcK7LABEBAAG0I1ZlZGFuZyBKb3NoaSA8
+dmVkYW5najA0NEBnbWFpbC5jb20+iQFOBBMBCAA4FiEEY++6kQ1PyPHVwrvXnXos
+1ly1EtgFAmCz0+ICGwMFCwkIBwIGFQgJCgsCBBYCAwECHgECF4AACgkQnXos1ly1
+EtiSJAgAg+tJbuXundcAQOZh6yRKKoWxQ9hc2F6bXUnFEO3ypz59VgRvt0rezSBT
+Pmxssl7lkn8gQ3lHQ6IwzebQJnXHJw0b+bRqhfSPpszkd1/4DL5JFttwFqtJSKLp
+QX4Zu2tRPKIm3vkhyXFOjNIAQ+B46gLppZjV1qIQBXCU+nXG6NtU1Djd8vKMGd+/
+ELV2HdzNv0wDrsvY09GONrUG6BnZqPotAdPe71JNmVuQ08Gpsw9fWz6GbhaMNFjd
+yY4KDp3fkWK5lBV2AL/j6A1NyhzYReTSicUlwOlC/leEN0gauB8IvWpUSdNSyT/s
+8O1rFwz3tYaEJGQ6PU10mUAPMDX+A7kBDQRgs9PiAQgAtsbx1UjpRuAO8dHRsmM8
+dadXhPjPcfrSDZQwaqCFAQ1telj/nZl2L18otiQ9q4zQPWtEFjQlaRLgAaXfUMBO
+7YTmc3cZ4XZupMdaV89XcIs7GuSHd+S2KLNw19EsI4z4OkPchf70BxSpsFk9J9S0
+2fiNK70JHfPW8HdYH1Rv1Wj9FD3TeL3pYca6lcwF93+4g2UGaSN6DyufK37vPSVs
+Klb11JvtROIaA/pgN/6kXj2SLhwXtrG8TBYYnO0sD8Isv2JDH42nE4OycmYdA6Wy
+RlGcb1hy2chP2/HZTkv8fZkVDwv3/Im5/YUeJDNoYZU/g7AHEcDskJAIPIcvMqQr
+pwARAQABiQE2BBgBCAAgFiEEY++6kQ1PyPHVwrvXnXos1ly1EtgFAmCz0+ICGwwA
+CgkQnXos1ly1Etgz9gf9HqKDEcrdo55RYY+y6OTzgi+VyPMCxhpuX6N0jf5qPAO3
+UEGEKihK4zVwaCxTquDorlL0sfpEbSdPs7lHAV67MbepPq8SH0PSAi7i9v3r16nO
+Lel8Q2WmYxcJd5fBgf3vXqlxsldw9622BAipXLAPt8z9rUlWx+GlMo55GfEjgzli
+w5rNChCNVPx8Yalqvb1bCs5t+unOeUZ9LmGUedVFURd5S9Xge2278ImCvgTS5fqM
+X3f1LeDOp6lg0xO7QA0GdacN6KKGNHDc+S84fLEhLnvvzKg2qGcvBX5ukvCfFvGF
+5h23n2YwbzarlN8NSs7pOznS3e3LzUQSDcP/mEDoYg==
+=fCO/
+-----END PGP PUBLIC KEY BLOCK-----`;
+            
+                const pubkey = await openpgp.readKey({ armoredKey: plt });
+                const message = await openpgp.createMessage({ text: document.getElementById('message').textContent });
+                const encrypted = await openpgp.encrypt({
+                    message: message, // input as Message object
+                    encryptionKeys: pubkey, // for encryption
+                });
+
+                return encrypted;
+        }
+
+        var toggleButton = document.getElementById("toggle");
+
+        // contact form
+        var contact = document.getElementById("contactForm");
+        contact.onsubmit = async(e) => {
+            e.preventDefault();
+
+            const params = new URLSearchParams([...new FormData(e.target).entries()]);
+
+            if (toggleButton.checked) {
+                encryptPGP(params.get("message")).then(r => {
+                    params.set("message", btoa(r));
+                }).then(r => {
+                    console.log(params.get("message"));
+                    fetch("https://formspree.io/f/moqyverl", {
+                        method: "POST",
+                        body: params
+                    });
+                    window.location.assign("https://formspree.io/thanks?language=en")
+                });
+            }
+            else{
+                fetch("https://formspree.io/f/moqyverl", {
+                    method: "POST",
+                    body: params
+                });
+                window.location.assign("https://formspree.io/thanks?language=en")
+            }
+        }
+
     </script>
 </div>
 {% endblock navbar %}
