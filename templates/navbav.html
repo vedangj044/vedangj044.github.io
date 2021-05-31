@@ -26,7 +26,7 @@
                     </div>
                     <form class="flex flex-col dark:text-black" id="contactForm" >
                         <input class="p-2 rounded-md flex-grow border border-gray-600" type="email" placeholder="Email" name="_replyto"/>
-                        <textarea id="message" class="my-2 p-2 h-64 rounded-md flex-grow border border-gray-600" name="message" form="contactForm" type="text" placeholder="Message"></textarea>
+                        <textarea id="messageforcontact" class="my-2 p-2 h-64 rounded-md flex-grow border border-gray-600" name="message" form="contactForm" type="text" placeholder="Message"></textarea>
                         <button class="rounded-md bg-blue-300 p-2" type="submit" value="Submit">Submit</button>
                     </form>
                 </div>
@@ -101,7 +101,7 @@
         // Encryption
         async function encryptPGP() {
 
-            const plt = `-----BEGIN PGP PUBLIC KEY BLOCK-----
+const plt = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQENBGCz0+IBCADFbyeTZILPCIARRqpvg09B5G/0dHHEoM0Er0N5UH7HOHe9j7KI
 bAE5CcboDWVc05C4iqjEjtopSiG0DBJAhppi8S90ycrA5snRtxD3sDMawIioVsdg
@@ -133,7 +133,7 @@ X3f1LeDOp6lg0xO7QA0GdacN6KKGNHDc+S84fLEhLnvvzKg2qGcvBX5ukvCfFvGF
 -----END PGP PUBLIC KEY BLOCK-----`;
             
                 const pubkey = await openpgp.readKey({ armoredKey: plt });
-                const message = await openpgp.createMessage({ text: document.getElementById('message').textContent });
+                const message = await openpgp.createMessage({ text: document.getElementById('messageforcontact').value });
                 const encrypted = await openpgp.encrypt({
                     message: message, // input as Message object
                     encryptionKeys: pubkey, // for encryption
