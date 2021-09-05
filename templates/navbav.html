@@ -170,16 +170,18 @@ ThSTEQbRUrvdTkJSfnVX0dQkEHvHeqIk9lLajA==
                     fetch("https://formspree.io/f/moqyverl", {
                         method: "POST",
                         body: params
+                    }).then( function() {
+                        window.location.assign("https://formspree.io/thanks?language=en")
                     });
-                    window.location.assign("https://formspree.io/thanks?language=en")
                 });
             }
             else{
                 fetch("https://formspree.io/f/moqyverl", {
                     method: "POST",
                     body: params
+                }).then(function() {
+                    window.location.assign("https://formspree.io/thanks?language=en")
                 });
-                window.location.assign("https://formspree.io/thanks?language=en")
             }
         }
 
