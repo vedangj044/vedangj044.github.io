@@ -1,0 +1,379 @@
+
+<div class="dark:text-white dark:text-opacity-80 xl:mx-72 z-0">
+    <nav class="py-4 px-6 flex flex-col sm:flex-row" >
+        <div class="flex-auto"> 
+            <h1 class="text-2xl font-semibold" ><a href="/">Vedang</a></h1>
+        </div>
+        <ul class="flex flex-row px-1 py-2 sm:py-0">
+            <li class="sm:px-2" >
+                <a class="cursor-pointer" id="theme-toggle" >
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </a>
+            </li>
+            <li class="px-2">
+                <a class="text-1xl border-b-2 border-transparent hover:border-gray-800 dark:hover:border-white cursor-pointer" id="contact">
+                    <span>Contact</span>
+                </a>
+                <div id ="contact-form" class="border hidden border-gray-400 rounded-md p-3 flex-col fixed z-100 bg-white dark:bg-blackish sm:-mx-40 my-2">
+                    <h1 class="text-lg">Contact me</h1>
+                    <div class="flex my-2 items-center">
+                        <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                            <input type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                            <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                        </div>
+                        <label for="toggle" class="text-xs text-gray-700 dark:text-white">Encrypt message</label>
+                    </div>
+                    <form class="flex flex-col dark:text-black" id="contactForm" >
+                        <input class="p-2 rounded-md flex-grow border border-gray-600" type="email" placeholder="Email" name="_replyto"/>
+                        <textarea id="messageforcontact" class="my-2 p-2 h-64 rounded-md flex-grow border border-gray-600" name="message" form="contactForm" type="text" placeholder="Message"></textarea>
+                        <button class="rounded-md bg-blue-300 p-2" type="submit" value="Submit">Submit</button>
+                    </form>
+                </div>
+            </li>
+            <li class="px-2" >
+                <a class="text-1xl border-b-2 border-transparent hover:border-gray-800 dark:hover:border-white" target="_blank" href="https://vedangj044.github.io/blog/">
+                    <span>Blog</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        // set initial state
+        var button = document.getElementById("theme-toggle");
+        var sun = document.getElementById("sun");
+        var moon = document.getElementById("moon");
+        var root = document.getElementsByTagName('html')[0]
+        var key = "dark";
+
+        var contact = document.getElementById("contact");
+        var contactForm = document.getElementById("contact-form");
+
+        function dar() {
+            sun.style.display = "none";
+            moon.style.display = "block";
+            root.classList.add("dark");
+            localStorage.setItem(key, "true");
+        }
+
+        function li() {
+            sun.style.display = "block";
+            moon.style.display = "none";
+            root.classList.remove("dark");
+            localStorage.setItem(key, "false");
+        }
+
+        if (localStorage.getItem(key) === null) {
+            li();
+        }
+        else if (localStorage.getItem(key) === "false") {
+            li();
+        }
+        else {
+            dar();
+        }
+
+        button.onclick = function() {
+            if (localStorage.getItem(key) === "true") {
+                li();
+            }
+            else {
+                dar();
+            }
+        }
+
+        contact.onclick = function() {
+
+            if (contactForm.style.display == "flex") {
+                contactForm.style.display = "none";
+            }
+            else {
+                contactForm.style.display = "flex";
+            }
+        
+        }
+
+        document.onscroll = function() {
+            contactForm.style.display = "none";
+        }
+
+        // Encryption
+        async function encryptPGP() {
+
+const plt = `-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+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
+=ELlw
+-----END PGP PUBLIC KEY BLOCK-----`;
+            
+                const pubkey = await openpgp.readKey({ armoredKey: plt });
+                const message = await openpgp.createMessage({ text: document.getElementById('messageforcontact').value });
+                const encrypted = await openpgp.encrypt({
+                    message: message, // input as Message object
+                    encryptionKeys: pubkey, // for encryption
+                });
+
+                return encrypted;
+        }
+
+        var toggleButton = document.getElementById("toggle");
+
+        // contact form
+        var contact = document.getElementById("contactForm");
+        contact.onsubmit = async(e) => {
+            e.preventDefault();
+
+            const params = new URLSearchParams([...new FormData(e.target).entries()]);
+
+            if (toggleButton.checked) {
+                encryptPGP(params.get("message")).then(r => {
+                    params.set("message", btoa(r));
+                }).then(r => {
+                    console.log(params.get("message"));
+                    fetch("https://formspree.io/f/moqyverl", {
+                        method: "POST",
+                        body: params
+                    }).then( function() {
+                        window.location.assign("https://formspree.io/thanks?language=en")
+                    });
+                });
+            }
+            else{
+                fetch("https://formspree.io/f/moqyverl", {
+                    method: "POST",
+                    body: params
+                }).then(function() {
+                    window.location.assign("https://formspree.io/thanks?language=en")
+                });
+            }
+        }
+
+    </script>
+</div>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vedang Joshi</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Vedang Joshi, Carnegie Mellon University"/>
+    <meta name="keywords" content="Vedang Joshi, Ujjain, indore, davv, ietdavv, iet, Computer Science, Engineering, Portfolio, vedang, contributions, year, science, github, vedangj044, innovaccer, sde, security, cmu, software engineering, masters, Carnegie Mellon University">
+    
+      <!-- Open Graph data -->
+    <meta property="og:title" content="Vedang Josh"/>
+    <meta property="og:url" content="http://vedangj044.github.io"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="MSE Student @CarnegieMellon | Previously SDE-1 Cybersecurity @Innovaccer"/>
+    <meta property="og:image" content="http://vedangj044.github.io/back.webp"/>
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Vedang Joshi"/>
+    <meta name="twitter:description" content="MSE Student @CarnegieMellon | Previously SDE-1 Cybersecurity @Innovaccer"/>
+    <meta name="twitter:url" content="http://vedangj044.github.io"/>
+    <meta name="twitter:image" content="http://vedangj044.github.io/back.webp"/>
+
+    <link href="https://vedangj044.github.io/styles/style.css" rel="stylesheet" type="text/css"/>
+    <link href="https://vedangj044.github.io/styles/markdown.css" rel="stylesheet" type="text/css"/>
+    
+    <script src="https://unpkg.com/openpgp@5.0.0-3/dist/openpgp.min.js"></script>
+    <meta name="google-site-verification" content="Lh5sGO-1iwyzO1RVcCYH2EeP7Tsxnrxa37mnJIgi0Fs" />
+    
+</head>
+<body class="bg-gray-100 dark:bg-blackish z-0" >
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org/",
+        "@id": "http://vedangj044.github.io",
+        "@type": "WebPage",
+        "creator":  {
+            "@id": "http://vedangj044.github.io",
+            "@type": "Person",
+            "name": "Vedang Joshi",
+            "image": {
+                "@id": "https://vedangj044.github.io/back.webp",
+                "@type": "ImageObject",
+                "caption": "Vedang Joshi"
+            },
+            "url" : "http://vedangj044.github.io",
+            "nationality": {
+                "@type": "Country",
+                "name": "India"
+            },
+            "sameAs": [
+                "https://x.com/vedangone",
+                "https://www.linkedin.com/in/vedang-j-783b6397/",
+                "https://github.com/vedangj044"
+            ]
+        }
+    }
+    </script>
+    <div class="dark:text-white dark:text-opacity-80 xl:mx-72 md:mx-8 flex flex-col h-screen" >
+        
+        <div class="flex-grow sm:my-24 flex flex-col-reverse sm:flex-row">
+            <div class="flex-1 flex flex-row justify-around px-2 sm:px-0">
+                <img style="max-height: 600px;" class="sm:h-4/5 rounded-md shadow-xl" src="https://vedangj044.github.io/back.webp"/>
+            </div>
+            <div class="flex-1 px-4">
+                <h2 class="text-3xl text-gray-700 dark:text-gray-500" >Hey, I'm</h2>
+                <h1 class="text-7xl font-semibold">Vedang Joshi</h1>
+                <h2 class="font-light text-2xl py-4 max-w-md"  >I am currently pursuing a Master's in Software Engineering with a focus on Scalable Systems at Carnegie Mellon University. I have a passion for reading, discussing, and developing software. Previously, I worked as an SDE-1 on a Cybersecurity team, where I specialized in building web applications and automating cloud processes.</h2>
+                <ul class="flex max-w-md justify-start items-baseline" >
+                    <li class="" >
+                        <a href="https://github.com/vedangj044" class="inline-block" >
+                            <img class=" w-10 pointer-events-none" src="https://vedangj044.github.io/git.svg"/>                            
+                        </a>
+                    </li>
+                    <li class="mx-3">
+                        <a href="https://x.com/vedangone" class="inline-block">
+                            <img class=" w-10 pointer-events-none"  src="https://vedangj044.github.io/x.png"/>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="https://www.linkedin.com/in/vedang-j-783b6397/" class="inline-block">
+                            <img class=" w-10 pointer-events-none" src="https://vedangj044.github.io/linkedin.svg"/>
+                        </a>
+                    </li>
+                    <li class="mx-3">
+                        <a href="mailto:vedangj044@gmail.com" class="inline-block" >
+                            <embed class=" w-10 pointer-events-none" src="https://vedangj044.github.io/gmail.svg"/>
+                        </a>
+                    </li>
+                    <li class="w-10">
+                        <a href="https://2ly.link/20KxX">
+                            <svg id="Capa_1" enable-background="new 0 0 512 512" height="100%" viewBox="0 0 512 512" width="100%" xmlns="http://www.w3.org/2000/svg"><g><g><g><g><g><g><path d="m376.056 0h-145.819l-28.159 37.326v442.09l28.159 32.584h145.819c12.067 0 21.85-9.782 21.85-21.85v-468.3c0-12.068-9.782-21.85-21.85-21.85z" fill="#f4fbff"/><path d="m434.951 0h-65.26c12.067 0 21.85 9.782 21.85 21.85v468.3c0 12.067-9.782 21.85-21.85 21.85h65.26c12.067 0 21.85-9.782 21.85-21.85v-468.3c0-12.068-9.783-21.85-21.85-21.85z" fill="#e4f6ff"/><path d="m230.237 0h-153.188c-12.067 0-21.85 9.782-21.85 21.85v468.3c0 12.067 9.783 21.85 21.85 21.85h153.188z" fill="#8fddc1"/></g></g></g></g><g><g><g><path d="m311.854 150.449c-21.267 0-38.569-17.303-38.569-38.569s17.302-38.568 38.569-38.568c7.728 0 15.187 2.279 21.569 6.591 3.537 2.389 4.468 7.194 2.078 10.731-2.389 3.537-7.194 4.466-10.731 2.078-3.818-2.579-8.284-3.942-12.916-3.942-12.743 0-23.111 10.368-23.111 23.11 0 12.744 10.368 23.111 23.111 23.111 4.716 0 8.681-1.402 11.785-4.166.606-.54 1.186-1.138 1.72-1.776 2.741-3.271 7.617-3.701 10.888-.958 3.271 2.742 3.7 7.617.958 10.889-1.015 1.211-2.12 2.351-3.285 3.388-5.936 5.286-13.566 8.081-22.066 8.081z" fill="#eabc6b"/></g></g><g><g><path d="m388.795 150.448c-3.854 0-7.303-2.431-8.595-6.068l-21.107-60.805c-1.399-4.033.735-8.435 4.767-9.835 4.032-1.402 8.436.734 9.836 4.767l14.966 43.117 14.254-42.907c1.346-4.052 5.719-6.246 9.771-4.898 4.051 1.346 6.244 5.72 4.899 9.771l-20.139 60.623c-1.267 3.725-4.712 6.209-8.591 6.235-.02 0-.041 0-.061 0z" fill="#eabc6b"/></g></g></g><g><g><circle cx="142.816" cy="111.88" fill="#ffe07d" r="53.55"/><path d="m142.816 124.512c-17.067 0-31.47 11.367-36.075 26.941 9.518 8.681 22.177 13.977 36.075 13.977s26.557-5.296 36.075-13.977c-4.605-15.574-19.008-26.941-36.075-26.941z" fill="#407093"/><circle cx="142.816" cy="110.323" fill="#365e7d" r="18.949"/></g></g><g fill="#ffe07d"><path d="m187.599 278.376h-89.565c-4.951 0-8.964-4.013-8.964-8.964v-22.082c0-4.951 4.013-8.964 8.964-8.964h89.565c4.951 0 8.964 4.013 8.964 8.964v22.081c0 4.951-4.013 8.965-8.964 8.965z"/><path d="m187.599 360.288h-89.565c-4.951 0-8.964-4.013-8.964-8.964v-22.081c0-4.951 4.013-8.964 8.964-8.964h89.565c4.951 0 8.964 4.013 8.964 8.964v22.081c0 4.951-4.013 8.964-8.964 8.964z"/><path d="m187.599 442.201h-89.565c-4.951 0-8.964-4.013-8.964-8.964v-22.081c0-4.951 4.013-8.964 8.964-8.964h89.565c4.951 0 8.964 4.013 8.964 8.964v22.081c0 4.951-4.013 8.964-8.964 8.964z"/></g><g><g><g><path d="m415.597 259.028h-144.954c-4.269 0-7.729-3.46-7.729-7.729s3.46-7.729 7.729-7.729h144.953c4.269 0 7.729 3.46 7.729 7.729.001 4.269-3.46 7.729-7.728 7.729z" fill="#407093"/></g><g><path d="m343.12 306.437h-72.477c-4.269 0-7.729-3.46-7.729-7.729s3.46-7.729 7.729-7.729h72.477c4.269 0 7.729 3.46 7.729 7.729s-3.46 7.729-7.729 7.729z" fill="#407093"/></g><g><path d="m415.597 353.847h-144.954c-4.269 0-7.729-3.46-7.729-7.729s3.46-7.729 7.729-7.729h144.953c4.269 0 7.729 3.46 7.729 7.729.001 4.269-3.46 7.729-7.728 7.729z" fill="#407093"/></g><g><path d="m415.597 401.256h-144.954c-4.269 0-7.729-3.46-7.729-7.729s3.46-7.729 7.729-7.729h144.953c4.269 0 7.729 3.46 7.729 7.729s-3.46 7.729-7.728 7.729z" fill="#407093"/></g><g><path d="m343.12 449.93h-72.477c-4.269 0-7.729-3.46-7.729-7.729s3.46-7.729 7.729-7.729h72.477c4.269 0 7.729 3.46 7.729 7.729s-3.46 7.729-7.729 7.729z" fill="#407093"/></g></g><g><g><path d="m415.597 211.619h-144.954c-4.269 0-7.729-3.46-7.729-7.729s3.46-7.729 7.729-7.729h144.953c4.269 0 7.729 3.46 7.729 7.729.001 4.269-3.46 7.729-7.728 7.729z" fill="#407093"/></g></g></g></g></g></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="post-content border border-gray-400 dark:border-gray-600 rounded-lg p-3 m-3 dark:bg-readme">
+            
+            <h1 id="alien-about-me"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f47d.png" alt="alien" /> About me</h1>
+<p>Hi, I'm Vedang, a computer enthusiast and student at Carnegie Mellon University (CMU), with a passion for distributed systems - there's something incredibly cool about solving complex, large-scale challenges. My journey into tech really took off during a two-year stint on the cybersecurity team at Innovaccer, a late-stage startup. I call it an "unfair advantage" because I had the opportunity to dive deep into all three major cloud providers, automate processes, build web applications, and develop a strong foundation in security-all while having a blast.</p>
+<p>That experience sparked my interest in scalable, distributed systems, where I could combine technical depth with my desire to solve meaningful, impactful problems. I'm always full of energy, self-taught, and constantly looking for new things to learn. Whether it's hacking away at a new project or learning the latest tech, I'm eager to dive in and push the limits.
+<br/>
+<br/>
+When I'm not programming, you'll probably find me immersed in a good book or vibing to music. I also have a knack for DIY projects - building things from scratch has been my first love for as long as I can remember. Whether it's crafting something new or tinkering with gadgets, I'm always looking for creative outlets. And of course, I love chatting about the latest trends in tech - there's always something exciting happening!</p>
+<h2 id="artist-pallere-skills"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3a8.png" alt="artist pallere" /> Skills</h2>
+<hr/>
+<p>Over the last two years, I've spent my days working with <u>AWS</u> and <u>Azure</u>, where I was the main person behind an in-house security solution that had a huge impact. I took this project from designing it, to building it, to keeping it running smoothly as it grew. For the same project, I integrated tools like <u>Snowflake</u>, <u>Databricks</u>, and <u>New Relic</u>, connecting everything with cron jobs, <u>Python FastAPI</u>, and a <u>React</u> frontend. I also got hands-on with CI/CD pipelines and <u>Kubernetes</u>. One of my proudest achievements was building a <u>Terraform</u> module that's deployed every time a new customer comes on board. It uses StackRox (now Red Hat Advanced Cluster Security) for protecting clusters, and I managed our own StackRox setup as if it were my own little garden.
+<br/>
+<br/>
+In our team, I became the go-to person for fixing Snowflake connectivity issues. We had layers of security in our Snowflake setup, and I was one of the few who really understood how each piece worked. So whenever someone hit a connection problem, they'd come straight to me. I also took care of managing Satori Cyber clusters, handling updates, scaling, and monitoring them like I was growing a plant—always keeping an eye on their health.
+<br/>
+<br/>
+I've also had the chance to do a lot of internships throughout college, and I credit internships and hackathons for a lot of my learning. I participated in Google Summer of Code, where I teamed up with some awesome Red Hat engineers to build an IoT-as-a-Service solution in Rust, which was a great learning experience.
+<br/>
+<br/>
+I've interned twice at Innovaccer—once working on a schema API that let you change database definitions through a REST API, and another time building automations to simulate DOS attacks and run Nmap scans on open ports. On top of that, I even tried my hand at Android development, spending four months working with Kotlin and CameraX, and had a great time doing it.
+<br/>
+<br/>
+All these experiences across different areas of tech have been amazing, but what excites me the most is diving deep into distributed systems. I'm eager to build and scale software that can solve real-world problems and reach people around the globe.</p>
+<h2 id="open-file-folder-projects"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c2.png" alt="open file folder" /> Projects</h2>
+<hr/>
+Some of the projects I built during college.
+<ul>
+<li><a href="https://github.com/Paradigm-shift-AI">Paradigm</a>, is an automated testing tool. It is a plugin that converts whatever is taught in an online class to True/False and Fill in the blanks question and sends them to the students' smartphone in real-time. This helps improve attentiveness and retention in students. <a href="https://www.youtube.com/watch?v=ceVBPfb-jlc">Demo</a></li>
+<li><a href="https://github.com/vedangj044/News_stock_prediction">Famulus</a>, is an intelligent stock prediction tool. The users input a keyword, this tool analyses all the latest news articles to predict the change in the value of this stock in an interval of 1, 5, 7, 15 days. <a href="https://vedangj044.github.io/blog/famulus/">Read more</a></li>
+<li><a href="https://github.com/vedangj044/Frisson">Frisson</a>, is a very simple android app to read stories about UFO sightings. It was built with Kotlin, following all aspects of MAD aka Modern Android Development.</li>
+<li><a href="https://github.com/vedangj044/MusicWallProject">Music Wall</a>, is a Web App, it creates a beautiful Music wall webpage for you, whenever you like a music video, it is added to this page, thus you can share your music interests with friends.</li>
+<li>Assistant, is a script that adds voice commands to simple tasks. It uses IFTT and thus works with Google Assistant, Alexa, or even automatic.</li>
+</ul>
+<h2 id="radio-contact"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4fb.png" alt="Radio" /> Contact</h2>
+<hr/>
+<ul>
+<li><a href="/#contact">Contact button</a></li>
+<li><a href="mailto:vedangj044@gmail.com">vedangj044@gmail.com</a></li>
+</ul>
+
+
+        </div>
+
+        <footer class="flex justify-evenly align-middle p-2">
+            <p>Made by Vedang &#183; Powered by <a class="border-b-2 border-transparent hover:border-black dark:hover:border-white" href="https://www.getzola.org/">Zola</a> & <a class="border-b-2 border-transparent hover:border-black dark:hover:border-white" href="https://tailwindcss.com/"> Tailwind</a></p>
+        </footer>
+        <a title="Web Analytics" href="https://clicky.com/101467378"><img alt="Clicky" src="//static.getclicky.com/media/links/badge.gif" class="hidden" /></a>
+        <script async data-id="101467378" src="//static.getclicky.com/js"></script>
+    
+    </div>
+
+</body>
+</html>
